@@ -1,2 +1,14 @@
 # ocaml-italian-verbs
+
 An OCaml library for conjugating Italian verbs.
+
+The goal is to derive all the inflected forms of a given verb from a limited
+set of rules, rather than referring to a large database.
+
+The code should be as readable as possible, with the hope that the rules can be
+fully grasped by a human language learner.
+
+# Limitations
+
+This project is in its earliest stage, and currently only the present indicative
+tense of regular verbs is supported.

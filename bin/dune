@@ -1,0 +1,4 @@
+(executable
+ (public_name ocaml-italian-verbs)
+ (name main)
+ (libraries conjugate))
