@@ -6,11 +6,6 @@ type person = First | Second | Third
 
 type category = Are | Ere | Ire
 
-let describe = function
-  | Are -> "first conjugation"
-  | Ere -> "second conjugation"
-  | Ire -> "third conjugation"
-
 let categorize infinitive =
   match String.sub infinitive (String.length infinitive - 3) 3 with
     | "are" -> Are
