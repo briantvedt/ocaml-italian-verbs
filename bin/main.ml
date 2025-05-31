@@ -1,7 +1,7 @@
 let run_one_verb infinitive =
   let f = Conjugate.present_indicative infinitive in
-  let conjugations = [(f Singular First); (f Singular Second); (f Singular Third);
-      (f Plural First); (f Plural Second); (f Plural Third)] in
+  let conjugations = [(f First Singular); (f Second Singular); (f Third Singular);
+      (f First Plural); (f Second Plural); (f Third Plural)] in
   print_endline (infinitive ^ ": " ^ (String.concat ", " conjugations))
   
 let () =
