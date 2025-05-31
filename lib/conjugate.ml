@@ -28,3 +28,7 @@ let present_indicative infinitive person number =
       | (First, Plural) -> stem ^ "iamo"
       | (Second, Plural) -> stem ^ (match cat with Are -> "a" | Ere -> "e" | Ire -> "i") ^ "te"
       | (Third, Plural) -> stem ^ (match cat with Are -> "a" | _ -> "o") ^ "no"
+
+let past_participle infinitive =
+  let (stem, cat) = decompose infinitive in
+    stem ^ (match cat with Are -> "a" | Ere -> "u" | Ire -> "i") ^ "to"
