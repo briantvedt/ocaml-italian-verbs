@@ -1,8 +1,8 @@
-(* preparation *)
+type person = First | Second | Third
 
 type number = Singular | Plural
 
-type person = First | Second | Third
+(* preparation *)
 
 type category = Are | Ere | Ire
 
