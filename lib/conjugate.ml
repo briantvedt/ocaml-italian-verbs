@@ -2,6 +2,14 @@ type person = First | Second | Third
 
 type number = Singular | Plural
 
+(* constants *)
+
+(** let a_grave = "\u{E0}" **)
+
+let e_acute = "\u{E9}"
+let i_grave = "\u{EC}"
+let o_grave = "\u{F2}"
+
 (* preparation *)
 
 type category = Are | Ere | Ire
@@ -39,6 +47,18 @@ let imperfect infinitive person number =
       | (First, Plural) -> stemyv ^ "amo"
       | (Second, Plural) -> stemyv ^ "ate"
       | (Third, Plural) -> stemyv ^ "ano"
+
+let past_definite infinitive person number =
+  let (stem, cat) = decompose infinitive in
+    let stemy = stem ^ (match cat with Are -> "a" | Ere -> "e" | Ire -> "i") in
+    let twist = (match cat with Are -> o_grave | Ere -> e_acute | Ire -> i_grave) in
+      match (person, number) with
+      | (First, Singular) -> stemy ^ "i"
+      | (Second, Singular) -> stemy ^ "sti"
+      | (Third, Singular) -> stem ^ twist
+      | (First, Plural) -> stemy ^ "mmo"
+      | (Second, Plural) -> stemy ^ "ste"
+      | (Third, Plural) -> stemy ^ "rano"
 
 let past_participle infinitive =
   let (stem, cat) = decompose infinitive in
