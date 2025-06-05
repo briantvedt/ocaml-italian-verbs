@@ -1,10 +1,15 @@
-let run_one_verb infinitive =
-  let f = Conjugate.present_indicative infinitive in
+open Conjugate
+
+let all_forms f =
   let conjugations = [(f First Singular); (f Second Singular); (f Third Singular);
       (f First Plural); (f Second Plural); (f Third Plural)] in
-  let ppar = Conjugate.past_participle infinitive in
-  print_endline (infinitive ^ ": " ^ (String.concat ", " conjugations) ^ "; " ^ ppar)
-  
+    (String.concat ", " conjugations)
+
+let run_one_verb infinitive =
+  print_endline ("[" ^ infinitive ^ "] " ^ (past_participle infinitive));
+  print_endline ("PRESENTE: " ^ (all_forms (present_indicative infinitive)));
+  print_endline ("IMPERFETTO: " ^ (all_forms (imperfect infinitive)))
+
 let () =
   ["parlare"; "credere"; "sentire"]
   |> List.iter run_one_verb

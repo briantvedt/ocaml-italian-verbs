@@ -22,12 +22,23 @@ let decompose infinitive =
 let present_indicative infinitive person number =
   let (stem, cat) = decompose infinitive in
     match (person, number) with
-      | (First, Singular) -> stem ^ "o"
-      | (Second, Singular) -> stem ^ "i"
-      | (Third, Singular) -> stem ^ (match cat with Are -> "a" | _ -> "e")
-      | (First, Plural) -> stem ^ "iamo"
-      | (Second, Plural) -> stem ^ (match cat with Are -> "a" | Ere -> "e" | Ire -> "i") ^ "te"
-      | (Third, Plural) -> stem ^ (match cat with Are -> "a" | _ -> "o") ^ "no"
+    | (First, Singular) -> stem ^ "o"
+    | (Second, Singular) -> stem ^ "i"
+    | (Third, Singular) -> stem ^ (match cat with Are -> "a" | _ -> "e")
+    | (First, Plural) -> stem ^ "iamo"
+    | (Second, Plural) -> stem ^ (match cat with Are -> "a" | Ere -> "e" | Ire -> "i") ^ "te"
+    | (Third, Plural) -> stem ^ (match cat with Are -> "a" | _ -> "o") ^ "no"
+
+let imperfect infinitive person number =
+  let (stem, cat) = decompose infinitive in
+    let stemyv = stem ^ (match cat with Are -> "a" | Ere -> "e" | Ire -> "i") ^ "v" in
+      match (person, number) with
+      | (First, Singular) ->  stemyv ^ "o"
+      | (Second, Singular) -> stemyv ^ "i"
+      | (Third, Singular) -> stemyv ^ "a"
+      | (First, Plural) -> stemyv ^ "amo"
+      | (Second, Plural) -> stemyv ^ "ate"
+      | (Third, Plural) -> stemyv ^ "ano"
 
 let past_participle infinitive =
   let (stem, cat) = decompose infinitive in
