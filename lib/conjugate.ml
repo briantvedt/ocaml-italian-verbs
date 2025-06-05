@@ -27,6 +27,14 @@ let decompose infinitive =
 
 (* conjugation *)
 
+let present_participle infinitive =
+  let (stem, cat) = decompose infinitive in
+    stem ^ (match cat with Are -> "a" | _ -> "e") ^ "nte"
+
+let past_participle infinitive =
+  let (stem, cat) = decompose infinitive in
+    stem ^ (match cat with Are -> "a" | Ere -> "u" | Ire -> "i") ^ "to"
+
 let present_indicative infinitive person number =
   let (stem, cat) = decompose infinitive in
     match (person, number) with
@@ -59,7 +67,3 @@ let past_definite infinitive person number =
       | (First, Plural) -> stemy ^ "mmo"
       | (Second, Plural) -> stemy ^ "ste"
       | (Third, Plural) -> stemy ^ "rano"
-
-let past_participle infinitive =
-  let (stem, cat) = decompose infinitive in
-    stem ^ (match cat with Are -> "a" | Ere -> "u" | Ire -> "i") ^ "to"
