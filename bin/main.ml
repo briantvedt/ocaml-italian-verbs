@@ -11,7 +11,8 @@ let run_one_verb infinitive =
   print_endline ("PRESENTE: " ^ (all_forms (present_indicative infinitive)));
   print_endline ("IMPERFETTO: " ^ (all_forms (imperfect infinitive)));
   print_endline ("PASSATO REMOTO: " ^ (all_forms (past_definite infinitive)));
-  print_endline ("")
+  print_endline ("FUTURO: " ^ (all_forms (future infinitive)));
+  print_endline ""
 
 let () =
   ["parlare"; "credere"; "sentire"]

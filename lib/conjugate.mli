@@ -12,3 +12,5 @@ val present_indicative : string -> person -> number -> string
 val imperfect: string -> person -> number -> string
 
 val past_definite: string -> person -> number -> string
+
+val future: string -> person -> number -> string

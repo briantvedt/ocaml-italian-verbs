@@ -4,8 +4,7 @@ type number = Singular | Plural
 
 (* constants *)
 
-(** let a_grave = "\u{E0}" **)
-
+let a_grave = "\u{E0}"
 let e_acute = "\u{E9}"
 let i_grave = "\u{EC}"
 let o_grave = "\u{F2}"
@@ -67,3 +66,14 @@ let past_definite infinitive person number =
       | (First, Plural) -> stemy ^ "mmo"
       | (Second, Plural) -> stemy ^ "ste"
       | (Third, Plural) -> stemy ^ "rano"
+
+let future infinitive person number =
+  let (stem, cat) = decompose infinitive in
+    let stemyr = stem ^ (match cat with Ire -> "i" | _ -> "e") ^ "r" in
+      match (person, number) with
+      | (First, Singular) -> stemyr ^ o_grave
+      | (Second, Singular) -> stemyr ^ "ai"
+      | (Third, Singular) -> stemyr ^ a_grave
+      | (First, Plural) -> stemyr ^ "emo"
+      | (Second, Plural) -> stemyr ^ "ete"
+      | (Third, Plural) -> stemyr ^ "anno"
