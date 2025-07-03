@@ -6,15 +6,14 @@ let all_forms f =
     (String.concat ", " conjugations)
 
 let run_one_verb infinitive =
-  print_endline ("[" ^ infinitive ^ "] " ^ (gerund infinitive) ^ " - "
-        ^ (present_participle infinitive) ^ " - "
+  print_endline (infinitive ^ "/non_finite: " ^ (gerund infinitive) ^ ", "
+        ^ (present_participle infinitive) ^ ", "
         ^ (past_participle infinitive));
-  print_endline ("PRESENTE: " ^ (all_forms (present_indicative infinitive)));
-  print_endline ("IMPERFETTO: " ^ (all_forms (imperfect infinitive)));
-  print_endline ("PASSATO REMOTO: " ^ (all_forms (past_definite infinitive)));
-  print_endline ("FUTURO: " ^ (all_forms (future infinitive)));
-  print_endline ("CONDIZIONALE: " ^ (all_forms (conditional infinitive)));
-  print_endline ""
+  print_endline (infinitive ^ "/present: " ^ (all_forms (present_indicative infinitive)));
+  print_endline (infinitive ^ "/imperfect: " ^ (all_forms (imperfect infinitive)));
+  print_endline (infinitive ^ "/past_definite: " ^ (all_forms (past_definite infinitive)));
+  print_endline (infinitive ^ "/future: " ^ (all_forms (future infinitive)));
+  print_endline (infinitive ^ "/conditional: " ^ (all_forms (conditional infinitive)))
 
 let () =
   ["parlare"; "credere"; "sentire"]
