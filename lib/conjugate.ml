@@ -26,6 +26,10 @@ let decompose infinitive =
 
 (* conjugation *)
 
+let gerund infinitive =
+  let (stem, cat) = decompose infinitive in
+    stem ^ (match cat with Are -> "a" | _ -> "e") ^ "ndo"
+
 let present_participle infinitive =
   let (stem, cat) = decompose infinitive in
     stem ^ (match cat with Are -> "a" | _ -> "e") ^ "nte"

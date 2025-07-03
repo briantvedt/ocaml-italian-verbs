@@ -3,6 +3,8 @@ type person = First | Second | Third
 
 type number = Singular | Plural
 
+val gerund : string -> string
+
 val present_participle : string -> string
 
 val past_participle : string -> string

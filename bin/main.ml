@@ -6,7 +6,8 @@ let all_forms f =
     (String.concat ", " conjugations)
 
 let run_one_verb infinitive =
-  print_endline ("[" ^ infinitive ^ "] " ^ (present_participle infinitive) ^ " - "
+  print_endline ("[" ^ infinitive ^ "] " ^ (gerund infinitive) ^ " - "
+        ^ (present_participle infinitive) ^ " - "
         ^ (past_participle infinitive));
   print_endline ("PRESENTE: " ^ (all_forms (present_indicative infinitive)));
   print_endline ("IMPERFETTO: " ^ (all_forms (imperfect infinitive)));
