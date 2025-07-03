@@ -14,3 +14,5 @@ val imperfect: string -> person -> number -> string
 val past_definite: string -> person -> number -> string
 
 val future: string -> person -> number -> string
+
+val conditional: string -> person -> number -> string

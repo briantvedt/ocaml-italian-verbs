@@ -77,3 +77,14 @@ let future infinitive person number =
       | (First, Plural) -> stemyr ^ "emo"
       | (Second, Plural) -> stemyr ^ "ete"
       | (Third, Plural) -> stemyr ^ "anno"
+
+let conditional infinitive person number =
+  let (stem, cat) = decompose infinitive in
+    let stemyr = stem ^ (match cat with Ire -> "i" | _ -> "e") ^ "r" in
+      match (person, number) with
+      | (First, Singular) -> stemyr ^ "ei"
+      | (Second, Singular) -> stemyr ^ "esti"
+      | (Third, Singular) -> stemyr ^ "ebbe"
+      | (First, Plural) -> stemyr ^ "emmo"
+      | (Second, Plural) -> stemyr ^ "este"
+      | (Third, Plural) -> stemyr ^ "ebbero"
