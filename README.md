@@ -10,5 +10,10 @@ fully grasped by a human language learner.
 
 # Limitations
 
-This project is in its earliest stage, and currently only the present indicative
-tense of regular verbs is supported.
+This project is in its earliest stage, and currently only regular verbs,
+and only some of their tenses, are supported.
+
+# Running
+
+    dune exec main
+
