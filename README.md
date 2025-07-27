@@ -1,6 +1,6 @@
 # ocaml-italian-verbs
 
-* Incomplete and obsolete. Doing this in SML instead. *
+*Incomplete and obsolete. Doing this in SML instead.*
 
 An OCaml library for conjugating Italian verbs.
 
