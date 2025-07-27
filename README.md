@@ -1,5 +1,7 @@
 # ocaml-italian-verbs
 
+* Incomplete and obsolete. Doing this in SML instead. *
+
 An OCaml library for conjugating Italian verbs.
 
 The goal is to derive all the inflected forms of a given verb from a limited
